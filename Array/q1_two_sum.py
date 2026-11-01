@@ -3,20 +3,19 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        prevMap = {} #val : index
+        prevMap = {}
 
         for i,n in enumerate(nums):
             diff = target - n
             if diff in prevMap:
-                return [prevMap[diff], n]
+                return [prevMap[diff], i]
             prevMap[n] = i
 
         return
 
-#This is your local test block
+#Local test block
 if __name__ == "__main__":
     sol = Solution()
-    # Replace with sample inputs from the problem description
     test_cases = [
         ([2, 7, 11, 15], 9),
         ([3, 2, 4], 6)
